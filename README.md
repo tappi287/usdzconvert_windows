@@ -9,14 +9,14 @@ Usage:
   
   
   - with Python 3 installed:
-  		python run_usd_script_pywin.py /usdzconvert/usdzconvert <inputFile> <options>
+  		`python run_usd_script_pywin.py /usdzconvert/usdzconvert <inputFile> <options>`
   - with Python 2 installed:
-		python run_usd_script_pywin27.py /usdzconvert/usdzconvert <inputFile> <options>
+		`python run_usd_script_pywin27.py /usdzconvert/usdzconvert <inputFile> <options>`
   - without Python installed:
-  		run_usdzconvert.cmd /usdzconvert/usdzconvert <inputFile> <options>
+  		`run_usdzconvert.cmd /usdzconvert/usdzconvert <inputFile> <options>`
 		
   - to use any of the provided utilities
-		python run_usd_script_pywin.py /usdzconvert/<utility>.py <inputFile> <options>
+		`python run_usd_script_pywin.py /usdzconvert/<utility>.py <inputFile> <options>`
 ------------
 
 #### From the [original usdpython Apple Readme](https://github.com/tappi287/usdzconvert_windows/blob/master/README_USD-Python-Tools.md):
