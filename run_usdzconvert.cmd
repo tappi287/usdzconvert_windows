@@ -11,8 +11,10 @@ set PYTHON_DEPS=%DEPS%\python
 set USDVIEW_DEPS=%DEPS%\usdview-deps
 set USDVIEW_PYTHON_DEPS=%DEPS%\usdview-deps-python
 
+set INTERPRETER=%~dp0\USD\deps\python\python.exe
+
 set PYTHONPATH=%PYP%;%USDVIEW_PYTHON_DEPS%
 
 set PATH=%PYTHON_DEPS%;%LIBP%;%USDVIEW_DEPS%;%EMBREE_DEPS%
 
-@python "%~dp0/usdzconvert/usdzconvert" %*
+%INTERPRETER% "%~dp0/usdzconvert/usdzconvert" %*
