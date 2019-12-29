@@ -1,8 +1,9 @@
-#!usr/bin/python2
 """
+    Python 2 and 3 version
+
     This will setup an appropriate OS environment to run Python USD scripts from usdzconvert script path
-    Python 2.7 version
 """
+from __future__ import print_function
 import os
 import sys
 from subprocess import Popen
@@ -17,7 +18,7 @@ def join(*args):
 def update_path_string(env, key, new_path):
     env_path_string = env.get(key, '')
     if DEBUG:
-        print 'Extending {} with: {}'.format(key, new_path)
+        print('Extending {} with: {}'.format(key, new_path))
 
     if not env_path_string:
         env[key] = os.path.abspath(new_path) + ';'
@@ -32,10 +33,10 @@ def create_usd_env():
     deps = join(base, 'deps')
     libp = join(base, 'lib')
     pyp = join(base, 'lib', 'python')
+    ubin = join(base, 'bin')
+    uplg = join(base, 'plugin', 'usd')
 
-    embree_deps = join(deps, 'embree')
     python_deps = join(deps, 'python')
-    usdview_deps = join(deps, 'usdview-deps')
     usdview_python_deps = join(deps, 'usdview-deps-python')
 
     usdz_python_path = join(os.path.dirname(__file__), 'usdzconvert')
@@ -52,7 +53,7 @@ def create_usd_env():
         update_path_string(env, 'PYTHONPATH', p)
 
     # Update PATH
-    for p in (python_deps, libp, usdview_deps, embree_deps):
+    for p in (python_deps, libp, ubin, uplg):
         update_path_string(env, 'PATH', p)
 
     return env
@@ -60,7 +61,7 @@ def create_usd_env():
 
 if __name__ == '__main__':
     if DEBUG:
-        print sys.argv
+        print(sys.argv)
 
     usd_env = create_usd_env()
     py_path = join(os.path.dirname(__file__), 'USD', 'deps', 'python', 'python.exe')  # Python 2.7
@@ -68,13 +69,13 @@ if __name__ == '__main__':
     arguments = [os.path.abspath(py_path)]
 
     if not len(sys.argv) > 1:
-        print 'Not enough arguments. See the example usage below:'
-        print "python run_usd_script_pywin.py 'usdzconvert/usdzconvert' 'inputFile' '-iOS12'"
+        print('Not enough arguments. See the example usage below:')
+        print("python run_usd_script_pywin.py 'usdzconvert/usdzconvert' 'inputFile' '-iOS12'")
         sys.exit(-1)
 
     for arg in sys.argv[1:]:
         # Omit first argument which will be path to this script file
-        print arg
+        print(arg)
         arguments.append(arg)
 
     exitcode = Popen(arguments, env=usd_env).wait()

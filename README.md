@@ -1,22 +1,24 @@
 # usdzconvert_windows
 Use Apples usdzconvert on Windows platform
 
-This repository contains command line scripts to run Apples `usdzconvert` with Nvidias pre-build USD libraries on MS Windows. The scripts will create and set appropriate PYTHONPATH and PATH variables so the Apple scripts can locate their dependencies.
+This repository contains command line scripts to run Apples `usdzconvert` with pre-build USD libraries on MS Windows. The scripts will create and set appropriate PYTHONPATH and PATH variables so the USD libraries and Apple scripts can locate their dependencies.
 
 Usage:
   - Download the latest [release](https://github.com/tappi287/usdzconvert_windows/releases)
+
   - Extract the release folder `usd_python_win_27` and open a command line inside that folder
-  
-  
-  - with Python 3 installed:
-  		`python run_usd_script_pywin.py /usdzconvert/usdzconvert <inputFile> <options>`
-  - with Python 2 installed:
-		`python run_usd_script_pywin27.py /usdzconvert/usdzconvert <inputFile> <options>`
+
+  - with Python 2 or 3 installed:
+  		`python run_usd.py /usdzconvert/usdzconvert <inputFile> <options>`
+
   - without Python installed:
   		`run_usdzconvert.cmd /usdzconvert/usdzconvert <inputFile> <options>`
-		
+
   - to use any of the provided utilities
-		`python run_usd_script_pywin.py /usdzconvert/<utility>.py <inputFile> <options>`
+		`python run_usd.py /USD/bin/usdview <inputFile>`
+		
+  - test usdview with example asset
+		`test_usdview_island.cmd`
 ------------
 
 #### From the [original usdpython Apple Readme](https://github.com/tappi287/usdzconvert_windows/blob/master/README_USD-Python-Tools.md):
@@ -33,6 +35,18 @@ The easiest way to start using these command-line tools is to double-click `USD.
 For more details, including demos, see the WWDC 2019 session "Working with USD": 
 https://developer.apple.com/videos/play/wwdc2019/602/
 
-## [USD Pre-built Libraries and Tools](https://developer.nvidia.com/usd#binaries) by Nvidia
-Provided by Nvidia under Modified Apache 2.0 License
-These are the pre-built USD Libraries including a Python 2.7 interpreter and provide the USD functionality.
+
+#### USD Pre-built libraries ####
+USD Build 20.2 (latest dev) build with courtesy to [usd-build-club](https://github.com/vfxpro99/usd-build-club). Version info added where necessary due to failing builds.
+ - Alembic 1.6.0 (git checkout a3aa758)
+ - tbb44_20160526oss [github-release](https://github.com/intel/tbb/releases/download/4.4.5/tbb44_20160526oss_win.zip)
+ - ptex v2.2.1
+ - OpenSubdiv v3_3_3 (also required pre-compiled [GLFW v3.3](https://github.com/glfw/glfw/releases/download/3.3/glfw-3.3.bin.WIN64.zip))
+ - openexr
+ - openimageio
+ - [boost-build-club](https://github.com/vfxpro99/boost-build-club)
+ - [glew-build-club](https://github.com/vfxpro99/glew-build-club)
+ - zlib
+ - libtiff
+ - libpng
+ - libjpeg-turbo
