@@ -1,7 +1,7 @@
 # usdzconvert_windows
 Use Apples usdzconvert on Windows platform
 
-This repository contains command line scripts to run Apples `usdzconvert` with pre-build USD libraries on MS Windows. The scripts will create and set appropriate PYTHONPATH and PATH variables so the USD libraries and Apple scripts can locate their dependencies.
+This repository contains command line scripts to run Apples `usdzconvert` with pre-built/pre-compiled USD libraries on MS Windows. The scripts will create and set appropriate PYTHONPATH and PATH variables so the USD libraries and Apple scripts can locate their dependencies.
 
 Usage:
   - Download the latest [release](https://github.com/tappi287/usdzconvert_windows/releases)
@@ -35,9 +35,10 @@ The easiest way to start using these command-line tools is to double-click `USD.
 For more details, including demos, see the WWDC 2019 session "Working with USD": 
 https://developer.apple.com/videos/play/wwdc2019/602/
 
+------------
 
 #### USD Pre-built libraries ####
-USD Build 20.2 (latest dev) build with courtesy to [usd-build-club](https://github.com/vfxpro99/usd-build-club). Version info added where necessary due to failing builds.
+USD Build 20.2 (latest dev) build with courtesy to [usd-build-club](https://github.com/vfxpro99/usd-build-club). Version info added where necessary due compile errors on Windows 10/VS 2017 15.9.18/Cmake 3.16.2
  - Alembic 1.6.0 (git checkout a3aa758)
  - tbb44_20160526oss [github-release](https://github.com/intel/tbb/releases/download/4.4.5/tbb44_20160526oss_win.zip)
  - ptex v2.2.1
