@@ -6,7 +6,7 @@ This repository contains command line scripts to run Apples `usdzconvert` with p
 Usage:
   - Download the latest [release](https://github.com/tappi287/usdzconvert_windows/releases)
 
-  - Extract the release folder `usd_python_win_27` and open a command line inside that folder
+  - Extract the release folder `usd_abc_python_win_27` and open a command line inside that folder
 
   - with Python 2 or 3 installed:
   		`python run_usd.py /usdzconvert/usdzconvert <inputFile> <options>`
