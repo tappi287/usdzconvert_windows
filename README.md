@@ -1,5 +1,5 @@
 # usdzconvert_windows
-Use Apples usdzconvert on Windows or Unix platform
+Use Apples usdzconvert on Windows or Unix platform with pre-built USD library
 
 This repository contains command line scripts to run Apples `usdzconvert` with pre-built/pre-compiled USD libraries on MS Windows and Unix(tested on Ubuntu 18.04). The scripts will create and set appropriate PYTHONPATH and PATH variables so the USD libraries and Apple scripts can locate their dependencies.
 
@@ -8,23 +8,28 @@ Usage:
 
   - Extract the release folder `<release_zip_name>` and open a command line inside that folder
 
-  - with Python 2 or 3 installed:
-  		`python run_usd.py /usdzconvert/usdzconvert <inputFile> <options>`
+  - with Python 2 or 3 installed:<br />
+  		`python run_usd.py /usdzconvert/usdzconvert <inputFile> <options>`<br />
+		`python run_usd.py` - will start an interactive python interpreter with USD environment
 
-  - without Python installed[Windows]:
+  - without Python installed[Windows]:<br />
   		`run_usdzconvert.cmd /usdzconvert/usdzconvert <inputFile> <options>`
 
-  - to use any of the provided utilities
+  - to use any of the provided utilities<br />
 		`python run_usd.py /USD/bin/usdview <inputFile>`
 		
-  - test usdview with example asset
+  - test usdview with example asset<br />
 		`test_usdview_island.cmd`
 
   ### Unix
   
-  - Unix needs a Python 2.7 interpreter with the following packages
-    `python2.7 -m pip install --user numpy`<br />
-    `python2.7 -m pip install --user Pillow`
+  - Unix needs a Python 2.7 interpreter with the following packages<br />
+		`python2.7 -m pip install --user numpy`<br />
+		`python2.7 -m pip install --user Pillow`
+    
+  - with python2.7 installed:<br />
+		`python run_usd.py /usdzconvert/usdzconvert <inputFile> <options>`<br />
+		`python run_usd.py` - will start an interactive python interpreter with USD environment
 ------------
 
 #### From the [original usdpython Apple Readme](https://github.com/tappi287/usdzconvert_windows/blob/master/README_USD-Python-Tools.md):
@@ -44,16 +49,8 @@ https://developer.apple.com/videos/play/wwdc2019/602/
 ------------
 
 #### USD Pre-built libraries ####
-USD Build 20.2 (latest dev) build with courtesy to [usd-build-club](https://github.com/vfxpro99/usd-build-club). Version info added where necessary due compile errors on Windows 10/VS 2017 15.9.18/Cmake 3.16.2
- - Alembic 1.6.0 (git checkout a3aa758)
- - tbb44_20160526oss [github-release](https://github.com/intel/tbb/releases/download/4.4.5/tbb44_20160526oss_win.zip)
- - ptex v2.2.1
- - OpenSubdiv v3_3_3 (also required pre-compiled [GLFW v3.3](https://github.com/glfw/glfw/releases/download/3.3/glfw-3.3.bin.WIN64.zip))
- - openexr
- - openimageio
- - [boost-build-club](https://github.com/vfxpro99/boost-build-club)
- - [glew-build-club](https://github.com/vfxpro99/glew-build-club)
- - zlib
- - libtiff
- - libpng
- - libjpeg-turbo
+Windows Build: USD/build_scripts/`build_usd.py --alembic --hdf5`<br />
+Fix OpenExr 2.2.0 build errors by copying: Half.dll, Iex-2_2.dll, IexMath-2_2.dll, Imath-2_2.dll to OpenExr build dir\IlmImf (where b44ExpLogTable executable lives)
+
+Unix Build: USD/build_scripts/`build_usd.py --no-imaging --no-usdview --alembic --hdf5`<br />
+Fix OpenExr 2.2.0 build erros by: `sudo apt-get install libilmbase-dev`
