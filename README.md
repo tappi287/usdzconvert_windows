@@ -1,17 +1,17 @@
 # usdzconvert_windows
-Use Apples usdzconvert on Windows platform
+Use Apples usdzconvert on Windows or Unix platform
 
-This repository contains command line scripts to run Apples `usdzconvert` with pre-built/pre-compiled USD libraries on MS Windows. The scripts will create and set appropriate PYTHONPATH and PATH variables so the USD libraries and Apple scripts can locate their dependencies.
+This repository contains command line scripts to run Apples `usdzconvert` with pre-built/pre-compiled USD libraries on MS Windows and Unix(tested on Ubuntu 18.04). The scripts will create and set appropriate PYTHONPATH and PATH variables so the USD libraries and Apple scripts can locate their dependencies.
 
 Usage:
   - Download the latest [release](https://github.com/tappi287/usdzconvert_windows/releases)
 
-  - Extract the release folder `usd_abc_python_win_27` and open a command line inside that folder
+  - Extract the release folder `<release_zip_name>` and open a command line inside that folder
 
   - with Python 2 or 3 installed:
   		`python run_usd.py /usdzconvert/usdzconvert <inputFile> <options>`
 
-  - without Python installed:
+  - without Python installed[Windows]:
   		`run_usdzconvert.cmd /usdzconvert/usdzconvert <inputFile> <options>`
 
   - to use any of the provided utilities
@@ -19,6 +19,12 @@ Usage:
 		
   - test usdview with example asset
 		`test_usdview_island.cmd`
+
+  ### Unix
+  
+  - Unix needs a Python 2.7 interpreter with the following packages
+    `python2.7 -m pip install --user numpy`<br />
+    `python2.7 -m pip install --user Pillow`
 ------------
 
 #### From the [original usdpython Apple Readme](https://github.com/tappi287/usdzconvert_windows/blob/master/README_USD-Python-Tools.md):
