@@ -55,9 +55,9 @@ USD/build_scripts: <br />
 python build_usd.py "<install_dir>" --build-args USD,"-DBOOST_ROOT=<path_to_boost_binaries>" --openimageio --usdview --alembic --hdf5
 ````
 Fix OpenExr 2.2.0 build errors by copying: Half.dll, Iex-2_2.dll, IexMath-2_2.dll, Imath-2_2.dll to OpenExr build dir\IlmImf (where b44ExpLogTable executable lives).
-Using boost binaries from [SourceForge](https://sourceforge.net/projects/boost/files/boost-binaries/)
+Using 1_65_1 boost binaries from [SourceForge](https://sourceforge.net/projects/boost/files/boost-binaries/)
 
 * Unix <br />
 USD/build_scripts:<br />
 `python2.7 build_usd.py --no-imaging --no-usdview --alembic --hdf5` <br />
-Fix OpenExr 2.2.0 build erros by: `sudo apt-get install libilmbase-dev`
+Fix OpenExr 2.2.0 build errors by: `sudo apt-get install libilmbase-dev`
