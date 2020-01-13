@@ -49,8 +49,12 @@ https://developer.apple.com/videos/play/wwdc2019/602/
 ------------
 
 #### USD Pre-built libraries ####
-Windows Build: USD/build_scripts/`build_usd.py --alembic --hdf5`<br />
-Fix OpenExr 2.2.0 build errors by copying: Half.dll, Iex-2_2.dll, IexMath-2_2.dll, Imath-2_2.dll to OpenExr build dir\IlmImf (where b44ExpLogTable executable lives)
+Windows Build in USD/build_scripts/: <br />
+```
+python build_usd.py "<install_dir>" --build-args USD,"-DBOOST_ROOT=<path_to_boost_binaries>" --openimageio --usdview --alembic --hdf5
+````
+Fix OpenExr 2.2.0 build errors by copying: Half.dll, Iex-2_2.dll, IexMath-2_2.dll, Imath-2_2.dll to OpenExr build dir\IlmImf (where b44ExpLogTable executable lives); Using boost binaries from [SourceForge](https://sourceforge.net/projects/boost/files/boost-binaries/)
 
-Unix Build: USD/build_scripts/`build_usd.py --no-imaging --no-usdview --alembic --hdf5`<br />
+Unix Build: USD/build_scripts/: <br />
+`python2.7 build_usd.py --no-imaging --no-usdview --alembic --hdf5`
 Fix OpenExr 2.2.0 build erros by: `sudo apt-get install libilmbase-dev`
