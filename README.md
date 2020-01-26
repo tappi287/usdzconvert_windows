@@ -3,7 +3,12 @@ Use Apples usdzconvert on Windows or Unix platform with pre-built USD library
 
 This repository contains command line scripts to run Apples `usdzconvert` with pre-built/pre-compiled USD libraries on MS Windows and Unix(tested on Ubuntu 18.04). The scripts will create and set appropriate PYTHONPATH and PATH variables so the USD libraries and Apple scripts can locate their dependencies.
 
-Usage:
+### Usdzconvert Web UI
+If you prefer to use the usdz converter with a <b>graphical user interface</b>. Try [usdzconvert_webui](https://github.com/tappi287/usdzconvert_webui) which will provide a web ui across your local network and even fix some weaknesses of the current usdzconvert implementation like wrong UV set assignment and missing material assignment for Alembic files.
+
+On Windows you can easily install a [usdzconvert_webui_installer](https://github.com/tappi287/usdzconvert_webui/releases) that will automatically download a `pre-compiled_usd_library` release from this repository.
+
+### Usage:
   - Download the latest [release](https://github.com/tappi287/usdzconvert_windows/releases)
 
   - Extract the release folder `<release_zip_name>` and open a command line inside that folder
@@ -12,14 +17,16 @@ Usage:
   		`python run_usd.py /usdzconvert/usdzconvert <inputFile> <options>`<br />
 		`python run_usd.py` - will start an interactive python interpreter with USD environment
 
-  - without Python installed[Windows]:<br />
-  		`run_usdzconvert.cmd /usdzconvert/usdzconvert <inputFile> <options>`
-
-  - to use any of the provided utilities<br />
+  - to use any of the provided utilities eg. usdview<br />
 		`python run_usd.py /USD/bin/usdview <inputFile>`
 		
+ ### Windows
+  - without Python installed:<br />
+  		`run_usdzconvert.cmd /usdzconvert/usdzconvert <inputFile> <options>`
+
   - test usdview with example asset<br />
 		`test_usdview_island.cmd`
+		
 
   ### Unix
   
